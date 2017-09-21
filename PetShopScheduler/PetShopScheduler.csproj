@@ -135,6 +135,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -184,7 +185,16 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\PetShopScheduler.Domain\PetShopScheduler.Domain.csproj">
+      <Project>{323ed512-6ed1-41eb-8130-4c8a5d8fe38e}</Project>
+      <Name>PetShopScheduler.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PetShopScheduler.Entities\PetShopScheduler.Entities\PetShopScheduler.Entities.csproj">
+      <Project>{2a4c3c31-0915-4a42-bef9-3c2c1e416bae}</Project>
+      <Name>PetShopScheduler.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

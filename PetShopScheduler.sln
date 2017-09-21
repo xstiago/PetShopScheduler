@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShopScheduler", "PetShop
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShopScheduler.Tests", "PetShopScheduler.Tests\PetShopScheduler.Tests.csproj", "{5182F343-84B1-4846-BF26-AF9CA0B7BFD4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShopScheduler.Domain", "..\PetShopScheduler.Domain\PetShopScheduler.Domain.csproj", "{323ED512-6ED1-41EB-8130-4C8A5D8FE38E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShopScheduler.Entities", "..\PetShopScheduler.Entities\PetShopScheduler.Entities\PetShopScheduler.Entities.csproj", "{2A4C3C31-0915-4A42-BEF9-3C2C1E416BAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShopScheduler.DataAccess", "..\PetShopScheduler.DataAccess\PetShopScheduler.DataAccess\PetShopScheduler.DataAccess.csproj", "{90723399-B56C-44EC-8BC9-003225219C2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{5182F343-84B1-4846-BF26-AF9CA0B7BFD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5182F343-84B1-4846-BF26-AF9CA0B7BFD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5182F343-84B1-4846-BF26-AF9CA0B7BFD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{323ED512-6ED1-41EB-8130-4C8A5D8FE38E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{323ED512-6ED1-41EB-8130-4C8A5D8FE38E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{323ED512-6ED1-41EB-8130-4C8A5D8FE38E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{323ED512-6ED1-41EB-8130-4C8A5D8FE38E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A4C3C31-0915-4A42-BEF9-3C2C1E416BAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A4C3C31-0915-4A42-BEF9-3C2C1E416BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A4C3C31-0915-4A42-BEF9-3C2C1E416BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A4C3C31-0915-4A42-BEF9-3C2C1E416BAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90723399-B56C-44EC-8BC9-003225219C2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90723399-B56C-44EC-8BC9-003225219C2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90723399-B56C-44EC-8BC9-003225219C2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90723399-B56C-44EC-8BC9-003225219C2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
