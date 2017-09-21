@@ -186,21 +186,21 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\PetShopScheduler.Domain\PetShopScheduler.Domain.csproj">
-      <Project>{323ed512-6ed1-41eb-8130-4c8a5d8fe38e}</Project>
-      <Name>PetShopScheduler.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\PetShopScheduler.Entities\PetShopScheduler.Entities\PetShopScheduler.Entities.csproj">
-      <Project>{2a4c3c31-0915-4a42-bef9-3c2c1e416bae}</Project>
-      <Name>PetShopScheduler.Entities</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PetShopScheduler.Domain\PetShopScheduler.Domain.csproj">
+      <Project>{323ed512-6ed1-41eb-8130-4c8a5d8fe38e}</Project>
+      <Name>PetShopScheduler.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PetShopScheduler.Entities\PetShopScheduler.Entities.csproj">
+      <Project>{2a4c3c31-0915-4a42-bef9-3c2c1e416bae}</Project>
+      <Name>PetShopScheduler.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
