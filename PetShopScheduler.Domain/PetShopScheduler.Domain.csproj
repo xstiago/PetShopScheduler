@@ -62,6 +62,7 @@
     <Compile Include="Exceptions\OwnerPetValidatorException.cs" />
     <Compile Include="Validators\PetValidator.cs" />
     <Compile Include="Exceptions\PetValidatorException.cs" />
+    <Compile Include="Validators\ScheduleValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PetShopScheduler.DataAccess\PetShopScheduler.DataAccess.csproj">

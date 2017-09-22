@@ -39,6 +39,7 @@ namespace PetShopScheduler.Domain
 
         public void Update(OwnerPet entity)
         {
+            _ownerPetValidator.ValidateEntity(entity);
             _ownerPetRepository.Update(entity);
         }
 

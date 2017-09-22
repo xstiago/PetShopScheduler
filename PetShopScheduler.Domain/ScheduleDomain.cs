@@ -1,4 +1,5 @@
-﻿using PetShopScheduler.Domain.Interfaces;
+﻿using PetShopScheduler.DataAccess;
+using PetShopScheduler.Domain.Interfaces;
 using PetShopScheduler.Entities;
 using System;
 using System.Collections.Generic;
@@ -11,29 +12,40 @@ namespace PetShopScheduler.Domain
 {
     public class ScheduleDomain : IDomainBase<Schedule>
     {
+        private IValidatorBase<Schedule> _scheduleValidator;
+        private IRepository<Schedule> _scheduleRepository;
+
+        public ScheduleDomain(IValidatorBase<Schedule> scheduleValidator, IRepository<Schedule> scheduleRepository)
+        {
+            _scheduleValidator = scheduleValidator;
+            _scheduleRepository = scheduleRepository;
+        }
+        
         public Schedule Get(long id)
         {
-            throw new NotImplementedException();
+            return _scheduleRepository.Get(id);
         }
 
         public IEnumerable<Schedule> Get(Expression<Func<Schedule, bool>> expression)
         {
-            throw new NotImplementedException();
+            return _scheduleRepository.Get(expression);
         }
 
         public void Add(Schedule entity)
         {
-            throw new NotImplementedException();
+            _scheduleValidator.ValidateEntity(entity);
+            _scheduleRepository.Insert(entity);
         }
 
         public void Update(Schedule entity)
         {
-            throw new NotImplementedException();
+            _scheduleValidator.ValidateEntity(entity);
+            _scheduleRepository.Update(entity);
         }
 
         public void Delete(Schedule entity)
         {
-            throw new NotImplementedException();
+            _scheduleRepository.Delete(entity);
         }
     }
 }

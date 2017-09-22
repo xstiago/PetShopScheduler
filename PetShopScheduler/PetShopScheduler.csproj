@@ -207,6 +207,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PetShopScheduler.DataAccess\PetShopScheduler.DataAccess.csproj">
+      <Project>{90723399-b56c-44ec-8bc9-003225219c2f}</Project>
+      <Name>PetShopScheduler.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PetShopScheduler.Domain\PetShopScheduler.Domain.csproj">
       <Project>{323ed512-6ed1-41eb-8130-4c8a5d8fe38e}</Project>
       <Name>PetShopScheduler.Domain</Name>
