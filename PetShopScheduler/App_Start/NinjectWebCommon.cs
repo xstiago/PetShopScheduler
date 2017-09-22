@@ -66,17 +66,41 @@ namespace PetShopScheduler.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IDomainBase<Pet>>().To<PetDomain>();
-            kernel.Bind<IDomainBase<Breed>>().To<BreedDomain>();
-            kernel.Bind<IDomainBase<OwnerPet>>().To<OwnerPetDomain>();
-            kernel.Bind<IDomainBase<Establishment>>().To<EstablishmentDomain>();
-            kernel.Bind<IDomainBase<Schedule>>().To<ScheduleDomain>();
-
             kernel.Bind<IValidatorBase<Pet>>().To<PetValidator>();
             kernel.Bind<IValidatorBase<Breed>>().To<BreedValidator>();
             kernel.Bind<IValidatorBase<OwnerPet>>().To<OwnerPetValidator>();
             kernel.Bind<IValidatorBase<Establishment>>().To<EstablishmentValidator>();
             kernel.Bind<IValidatorBase<Schedule>>().To<ScheduleValidator>();
+
+            kernel.Bind<IDocumentValidator>().To<CpfValidator>();
+
+            kernel.Bind(typeof(IRepository<>)).ToSelf();
+
+            kernel.Bind<IDomainBase<Pet>>()
+                .To<PetDomain>()
+                .WithConstructorArgument("petValidator", kernel.Get<IValidatorBase<Pet>>())
+                .WithConstructorArgument("petRepository", kernel.Get<IRepository<Pet>>());
+
+
+            kernel.Bind<IDomainBase<Breed>>()
+                .To<BreedDomain>()
+                .WithConstructorArgument("breedValidator", kernel.Get<IValidatorBase<Breed>>())
+                .WithConstructorArgument("breedRepository", kernel.Get<IRepository<Breed>>());
+
+            kernel.Bind<IDomainBase<OwnerPet>>()
+                .To<OwnerPetDomain>()
+                .WithConstructorArgument("ownerPetValidator", kernel.Get<IValidatorBase<OwnerPet>>())
+                .WithConstructorArgument("ownerPetRepository", kernel.Get<IRepository<OwnerPet>>());
+
+            kernel.Bind<IDomainBase<Establishment>>()
+                .To<EstablishmentDomain>()
+                .WithConstructorArgument("establishmentValidator", kernel.Get<IValidatorBase<Establishment>>())
+                .WithConstructorArgument("establishmentRepository", kernel.Get<IRepository<Establishment>>());
+
+            kernel.Bind<IDomainBase<Schedule>>()
+                .To<ScheduleDomain>()
+                .WithConstructorArgument("scheduleValidator", kernel.Get<IValidatorBase<Schedule>>())
+                .WithConstructorArgument("scheduleRepository", kernel.Get<IRepository<Schedule>>());
         }        
     }
 }
