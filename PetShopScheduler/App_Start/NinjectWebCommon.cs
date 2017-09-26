@@ -15,6 +15,8 @@ namespace PetShopScheduler.App_Start
     using PetShopScheduler.Domain;
     using PetShopScheduler.Domain.Validators;
     using PetShopScheduler.DataAccess;
+    using System.Web.Http;
+    using Ninject.Web.Mvc;
 
     public static class NinjectWebCommon 
     {
@@ -51,6 +53,7 @@ namespace PetShopScheduler.App_Start
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
                 RegisterServices(kernel);
+                GlobalConfiguration.Configuration.DependencyResolver = new LocalNinjectDependencyResolver(kernel);
                 return kernel;
             }
             catch
@@ -74,7 +77,7 @@ namespace PetShopScheduler.App_Start
 
             kernel.Bind<IDocumentValidator>().To<CpfValidator>();
 
-            kernel.Bind(typeof(IRepository<>)).ToSelf();
+            kernel.Bind(typeof(IRepository<>)).To(typeof(RepositoryBase<>));
 
             kernel.Bind<IDomainBase<Pet>>()
                 .To<PetDomain>()
