@@ -19,12 +19,12 @@ namespace PetShopScheduler.Domain.Validators
 
         public void ValidateEntity(Establishment entity)
         {
-            if (entity != null)
-            {
-                ValidateName(entity);
-                ValidateDescription(entity);
-                ValidateDocument(entity.Document);
-            }
+            if (entity == null)
+                throw new EstablishmentValidatorException(Properties.Resources.EstablishmentCanNotBeNull);
+
+            ValidateName(entity);
+            ValidateDescription(entity);
+            ValidateDocument(entity.Document);
         }
 
         private void ValidateDocument(string document)

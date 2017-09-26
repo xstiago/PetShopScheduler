@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PetShopScheduler.Domain.Validators
+namespace PetShopScheduler.Domain.Exceptions
 {
     public class OwnerPetValidatorException : Exception
     {

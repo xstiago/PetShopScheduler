@@ -69,13 +69,14 @@ namespace PetShopScheduler.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<IDocumentValidator>().To<CpfValidator>();
+            kernel.Bind<IDocumentValidator>().To<CnpjValidator>();
+            
             kernel.Bind<IValidatorBase<Pet>>().To<PetValidator>();
             kernel.Bind<IValidatorBase<Breed>>().To<BreedValidator>();
             kernel.Bind<IValidatorBase<OwnerPet>>().To<OwnerPetValidator>();
-            kernel.Bind<IValidatorBase<Establishment>>().To<EstablishmentValidator>();
+            kernel.Bind<IValidatorBase<Establishment>>() .To<EstablishmentValidator>();
             kernel.Bind<IValidatorBase<Schedule>>().To<ScheduleValidator>();
-
-            kernel.Bind<IDocumentValidator>().To<CpfValidator>();
 
             kernel.Bind(typeof(IRepository<>)).To(typeof(RepositoryBase<>));
 

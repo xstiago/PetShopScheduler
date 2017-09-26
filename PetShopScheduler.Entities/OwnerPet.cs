@@ -16,7 +16,7 @@ namespace PetShopScheduler.Entities
         public string ZipCode { get; set; }
         public State State { get; set; }
         public City City { get; set; }
-        public string FoneNumber1 { get; set; }
-        public string FoneNumber2 { get; set; }
+        public string PhoneNumber1 { get; set; }
+        public string PhoneNumber2 { get; set; }
     }
 }

@@ -48,7 +48,7 @@ namespace PetShopScheduler.Domain.Validators
 
         private void ValidateBirthDate(Pet entity)
         {
-            if (entity.BirthDate.Date < DateTime.Now.Date)
+            if (entity.BirthDate.Date >= DateTime.Now.Date)
                 throw new PetValidatorException(Properties.Resources.PetBirthDateError);
         }
 

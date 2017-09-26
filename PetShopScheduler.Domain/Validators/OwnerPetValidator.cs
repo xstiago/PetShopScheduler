@@ -1,4 +1,5 @@
-﻿using PetShopScheduler.Domain.Interfaces;
+﻿using PetShopScheduler.Domain.Exceptions;
+using PetShopScheduler.Domain.Interfaces;
 using PetShopScheduler.Entities;
 using System;
 using System.Collections.Generic;
@@ -18,19 +19,19 @@ namespace PetShopScheduler.Domain.Validators
         
         public void ValidateEntity(OwnerPet entity)
         {
-            if (entity != null)
-            {
-                ValidateName(entity);
-                ValidateDocument(entity);
-                ValidateAddress(entity);
-                ValidateNumberFone(entity);
-            }
-        }
+            if (entity == null)
+                throw new OwnerPetValidatorException(Properties.Resources.OwnerPetCanNotBeNull);
+
+            ValidateName(entity);
+            ValidateDocument(entity);
+            ValidateAddress(entity);
+            ValidateNumberFone(entity);
+    }
 
         private void ValidateNumberFone(OwnerPet entity)
         {
-            if (string.IsNullOrWhiteSpace(entity.FoneNumber1))
-                throw new OwnerPetValidatorException();
+            if (string.IsNullOrWhiteSpace(entity.PhoneNumber1))
+                throw new OwnerPetValidatorException(Properties.Resources.OwnerPetPhoneNumberError);
         }
 
         private void ValidateAddress(OwnerPet entity)
@@ -59,7 +60,7 @@ namespace PetShopScheduler.Domain.Validators
             if (string.IsNullOrWhiteSpace(entity.Document))
                 throw new OwnerPetValidatorException(Properties.Resources.OwnerPetDocumentError);
 
-            if(_documentValidator.Validate(entity.Document))
+            if(!_documentValidator.Validate(entity.Document))
                 throw new OwnerPetValidatorException(Properties.Resources.OwnerPetDocumentInvalidError);
         }
 

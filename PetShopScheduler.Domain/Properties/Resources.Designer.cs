@@ -70,6 +70,15 @@ namespace PetShopScheduler.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O estabelecimento deve ser informado.
+        /// </summary>
+        internal static string EstablishmentCanNotBeNull {
+            get {
+                return ResourceManager.GetString("EstablishmentCanNotBeNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deve ser informado a descrição do estabelecimento.
         /// </summary>
         internal static string EstablishmentDescriptionError {
@@ -124,6 +133,15 @@ namespace PetShopScheduler.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O dono do animal de estimação deve ser informado.
+        /// </summary>
+        internal static string OwnerPetCanNotBeNull {
+            get {
+                return ResourceManager.GetString("OwnerPetCanNotBeNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deve ser informada a cidade do dono do animal de estimação.
         /// </summary>
         internal static string OwnerPetCityError {
@@ -160,20 +178,20 @@ namespace PetShopScheduler.Domain.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deve ser informado um número de teledone do dono do animal de estimação.
-        /// </summary>
-        internal static string OwnerPetFoneNumberError {
-            get {
-                return ResourceManager.GetString("OwnerPetFoneNumberError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Deve ser informado o nome do dono do animal de estimação.
         /// </summary>
         internal static string OwnerPetNameError {
             get {
                 return ResourceManager.GetString("OwnerPetNameError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deve ser informado um número de teledone do dono do animal de estimação.
+        /// </summary>
+        internal static string OwnerPetPhoneNumberError {
+            get {
+                return ResourceManager.GetString("OwnerPetPhoneNumberError", resourceCulture);
             }
         }
         
@@ -196,7 +214,7 @@ namespace PetShopScheduler.Domain.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data de nascimento do animal de estimação deve ser maior ou igual a hoje.
+        ///   Looks up a localized string similar to Data de nascimento do animal de estimação deve ser menor ou igual a hoje.
         /// </summary>
         internal static string PetBirthDateError {
             get {

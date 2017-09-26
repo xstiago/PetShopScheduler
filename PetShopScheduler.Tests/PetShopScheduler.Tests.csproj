@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.4.1.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.7.127\lib\net45\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -92,7 +98,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\ValuesControllerTest.cs" />
+    <Compile Include="Controllers\ScheduleControllerTest.cs" />
+    <Compile Include="Validators\EstablishmentValidatorTest.cs" />
+    <Compile Include="Validators\OwnerPetValidatorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -101,6 +109,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PetShopScheduler.DataAccess\PetShopScheduler.DataAccess.csproj">
+      <Project>{90723399-b56c-44ec-8bc9-003225219c2f}</Project>
+      <Name>PetShopScheduler.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PetShopScheduler.Domain\PetShopScheduler.Domain.csproj">
+      <Project>{323ed512-6ed1-41eb-8130-4c8a5d8fe38e}</Project>
+      <Name>PetShopScheduler.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PetShopScheduler.Entities\PetShopScheduler.Entities.csproj">
+      <Project>{2a4c3c31-0915-4a42-bef9-3c2c1e416bae}</Project>
+      <Name>PetShopScheduler.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PetShopScheduler\PetShopScheduler.csproj">
       <Project>{0430DD20-C632-4948-B609-0237E988DA73}</Project>
       <Name>PetShopScheduler</Name>

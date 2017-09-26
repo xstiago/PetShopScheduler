@@ -120,6 +120,9 @@
   <data name="BreedDescriptionError" xml:space="preserve">
     <value>Deve ser informado o nome da raça</value>
   </data>
+  <data name="EstablishmentCanNotBeNull" xml:space="preserve">
+    <value>O estabelecimento deve ser informado</value>
+  </data>
   <data name="EstablishmentDescriptionError" xml:space="preserve">
     <value>Deve ser informado a descrição do estabelecimento</value>
   </data>
@@ -138,6 +141,9 @@
   <data name="OwnerPetAddressNumberError" xml:space="preserve">
     <value>Deve ser informado o número do endereço do dono do animal de estimação</value>
   </data>
+  <data name="OwnerPetCanNotBeNull" xml:space="preserve">
+    <value>O dono do animal de estimação deve ser informado</value>
+  </data>
   <data name="OwnerPetCityError" xml:space="preserve">
     <value>Deve ser informada a cidade do dono do animal de estimação</value>
   </data>
@@ -150,11 +156,11 @@
   <data name="OwnerPetDocumentInvalidError" xml:space="preserve">
     <value>O CPF informado é inválido</value>
   </data>
-  <data name="OwnerPetFoneNumberError" xml:space="preserve">
-    <value>Deve ser informado um número de teledone do dono do animal de estimação</value>
-  </data>
   <data name="OwnerPetNameError" xml:space="preserve">
     <value>Deve ser informado o nome do dono do animal de estimação</value>
+  </data>
+  <data name="OwnerPetPhoneNumberError" xml:space="preserve">
+    <value>Deve ser informado um número de teledone do dono do animal de estimação</value>
   </data>
   <data name="OwnerPetStateError" xml:space="preserve">
     <value>Deve ser informado o estado do dono do animal de estimação</value>
@@ -163,7 +169,7 @@
     <value>Deve ser informado o CEP do dono do animal de estimação</value>
   </data>
   <data name="PetBirthDateError" xml:space="preserve">
-    <value>Data de nascimento do animal de estimação deve ser maior ou igual a hoje</value>
+    <value>Data de nascimento do animal de estimação deve ser menor ou igual a hoje</value>
   </data>
   <data name="PetBreedError" xml:space="preserve">
     <value>Deve ser informada a raça do animal de estimação</value>

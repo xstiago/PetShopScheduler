@@ -40,6 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BreedDomain.cs" />
+    <Compile Include="Validators\CnpjValidator.cs" />
+    <Compile Include="Validators\ContractedServiceValidator.cs" />
+    <Compile Include="Exceptions\ContractedServiceValidatorException.cs" />
     <Compile Include="Validators\EstablishmentValidator.cs" />
     <Compile Include="Validators\CpfValidator.cs" />
     <Compile Include="Interfaces\IDocumentValidator.cs" />
@@ -63,6 +66,7 @@
     <Compile Include="Validators\PetValidator.cs" />
     <Compile Include="Exceptions\PetValidatorException.cs" />
     <Compile Include="Validators\ScheduleValidator.cs" />
+    <Compile Include="Exceptions\ScheduleValidatorException.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PetShopScheduler.DataAccess\PetShopScheduler.DataAccess.csproj">
