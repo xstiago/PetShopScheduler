@@ -20,11 +20,13 @@ namespace PetShopScheduler.Domain
             _petValidator = petValidator;
             _petRepository = petRepository;
         }
-        
-        public void Add(Pet entity)
+
+        public Pet Add(Pet entity)
         {
             _petValidator.ValidateEntity(entity);
             _petRepository.Insert(entity);
+
+            return entity;
         }
 
         public Pet Get(long id)
@@ -37,15 +39,18 @@ namespace PetShopScheduler.Domain
             return _petRepository.Get(expression);
         }
 
-        public void Update(Pet entity)
+        public Pet Update(Pet entity)
         {
             _petValidator.ValidateEntity(entity);
             _petRepository.Update(entity);
+
+            return entity;
         }
 
-        public void Delete(Pet entity)
+        public Pet Delete(Pet entity)
         {
             _petRepository.Delete(entity);
+            return entity;
         }
     }
 }

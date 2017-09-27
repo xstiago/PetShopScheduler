@@ -185,7 +185,24 @@ namespace PetShopScheduler.Tests.Controllers
                 ZipCode = "55555555"
             };
 
-            _ownerPetController.Add(ownerPet);
+            var ownerPetAdded = _ownerPetController.Add(ownerPet);
+
+            Assert.IsNotNull(ownerPetAdded);
+            Assert.IsInstanceOfType(ownerPetAdded, typeof(OwnerPet));
+            Assert.AreEqual(ownerPetAdded, _ownerPetController.Get(3));
+        }
+
+        [TestMethod]
+        public void CanUpdateOwnerPetData()
+        {
+            var ownerPet = _ownerPetController.Get(1);
+            ownerPet.Name = "Modify Test";
+
+            var ownerPetModified = _ownerPetController.Update(ownerPet);
+
+            Assert.IsNotNull(ownerPetModified);
+            Assert.IsInstanceOfType(ownerPetModified, typeof(OwnerPet));
+            Assert.AreEqual(ownerPetModified.Name, _ownerPetController.Get(1).Name);
         }
     }
 }

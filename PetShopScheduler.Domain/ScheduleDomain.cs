@@ -31,21 +31,26 @@ namespace PetShopScheduler.Domain
             return _scheduleRepository.Get(expression);
         }
 
-        public void Add(Schedule entity)
+        public Schedule Add(Schedule entity)
         {
             _scheduleValidator.ValidateEntity(entity);
             _scheduleRepository.Insert(entity);
+
+            return entity;
         }
 
-        public void Update(Schedule entity)
+        public Schedule Update(Schedule entity)
         {
             _scheduleValidator.ValidateEntity(entity);
             _scheduleRepository.Update(entity);
+
+            return entity;
         }
 
-        public void Delete(Schedule entity)
+        public Schedule Delete(Schedule entity)
         {
             _scheduleRepository.Delete(entity);
+            return entity;
         }
     }
 }

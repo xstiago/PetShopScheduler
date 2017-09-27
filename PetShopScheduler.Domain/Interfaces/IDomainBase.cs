@@ -11,8 +11,8 @@ namespace PetShopScheduler.Domain.Interfaces
     {
         T Get(long id);
         IEnumerable<T> Get(Expression<Func<T, bool>> expression);
-        void Add(T entity);
-        void Update(T entity);
-        void Delete(T entity);
+        T Add(T entity);
+        T Update(T entity);
+        T Delete(T entity);
     }
 }

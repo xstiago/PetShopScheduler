@@ -20,11 +20,13 @@ namespace PetShopScheduler.Domain
             _establishmentValidator = establishmentValidator;
             _establishmentRepository = establishmentRepository;
         }
-        
-        public void Add(Establishment entity)
+
+        public Establishment Add(Establishment entity)
         {
             _establishmentValidator.ValidateEntity(entity);
             _establishmentRepository.Insert(entity);
+
+            return entity;
         }
 
         public Establishment Get(long id)
@@ -37,15 +39,18 @@ namespace PetShopScheduler.Domain
             return _establishmentRepository.Get(expression);
         }
 
-        public void Update(Establishment entity)
+        public Establishment Update(Establishment entity)
         {
             _establishmentValidator.ValidateEntity(entity);
             _establishmentRepository.Update(entity);
+
+            return entity;
         }
 
-        public void Delete(Establishment entity)
+        public Establishment Delete(Establishment entity)
         {
             _establishmentRepository.Delete(entity);
+            return entity;
         }
     }
 }
