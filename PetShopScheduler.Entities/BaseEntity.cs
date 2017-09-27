@@ -11,5 +11,6 @@ namespace PetShopScheduler.Entities
         public long ID { get; set; }
         public DateTime AddedDate { get; set; }
         public DateTime ModifiedDate { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }
